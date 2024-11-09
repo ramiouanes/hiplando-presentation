@@ -10,7 +10,7 @@ const PresentationSection = ({ title, icon: Icon, children }) => {
         onClick={() => setIsOpen(!isOpen)} 
         className="w-full flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all"
       >
-        <Icon className="text-blue-500 mr-3" size={24} />
+        <Icon className="text-[#0f603f] mr-3" size={24} />
         <h2 className="text-xl font-semibold flex-grow text-left">{title}</h2>
         {isOpen ? <ChevronDown className="text-gray-400" /> : <ChevronRight className="text-gray-400" />}
       </button>
@@ -26,7 +26,7 @@ const PresentationSection = ({ title, icon: Icon, children }) => {
 const Pillar = ({ title, icon: Icon, items }) => (
   <div className="flex-1 p-4 bg-white rounded-lg shadow-sm m-2">
     <div className="flex items-center mb-4">
-      <Icon className="text-blue-500 mr-2" size={24} />
+      <Icon className="text-[#0f603f] mr-2" size={24} />
       <h3 className="text-lg font-semibold">{title}</h3>
     </div>
     <ul className="space-y-2">
@@ -42,12 +42,12 @@ const Pillar = ({ title, icon: Icon, items }) => (
 
 const ProcessStep = ({ number, title, description, icon: Icon }) => (
   <div className="flex items-start mb-4">
-    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-bold mr-3">
+    <div className="flex items-center justify-center w-8 h-8 rounded-full text-[#0f603f] text-white font-bold mr-3">
       {number}
     </div>
     <div className="flex-grow">
       <h4 className="font-semibold flex items-center">
-        <Icon className="text-blue-500 mr-2" size={16} />
+        <Icon className="text-[#0f603f] mr-2" size={16} />
         {title}
       </h4>
       <p className="text-gray-600 mt-1">{description}</p>
@@ -56,7 +56,7 @@ const ProcessStep = ({ number, title, description, icon: Icon }) => (
 );
 
 const PricingTier = ({ title, features, highlighted = false }) => (
-  <div className={`flex-1 p-6 rounded-lg m-2 ${highlighted ? 'bg-blue-50 border-2 border-blue-200' : 'bg-white'}`}>
+  <div className={`flex-1 p-6 rounded-lg m-2 ${highlighted ? 'text-[#0f603f] border-2 text-[#0f603f]' : 'bg-white'}`}>
     <h3 className="text-xl font-semibold mb-4">{title}</h3>
     <ul className="space-y-3">
       {features.map((feature, index) => (
@@ -74,9 +74,14 @@ export default function App() {
     <div className="max-w-4xl mx-auto p-6 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-12">
+        <img 
+          src="/hiplando-presentation/logo.jpg" 
+          alt="Hiplando Logo" 
+          className="mx-auto h-24 mb-6"
+        />
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Hiplando</h1>
         <p className="text-xl text-gray-600">The Horse Community Hub</p>
-        <p className="text-lg text-blue-500 mt-2">Making horse deals professional and safe</p>
+        <p className="text-lg text-[#0f603f] mt-2">Making horse deals professional and safe</p>
       </div>
 
       {/* Vision */}
@@ -152,7 +157,7 @@ export default function App() {
         <div className="space-y-8">
           {/* Deal-Based Revenue */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">Deal-Based Revenue</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#0f603f]">Deal-Based Revenue</h3>
             <div className="flex flex-wrap -m-2">
               <PricingTier
                 title="Basic Package"
@@ -186,7 +191,7 @@ export default function App() {
 
           {/* Digital Platform */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">Digital Platform</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#0f603f]">Digital Platform</h3>
             <div className="flex flex-wrap -m-2">
               <PricingTier
                 title="Free Features"
@@ -217,7 +222,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-white rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center">
-                <Building className="mr-2 text-blue-500" size={20} />
+                <Building className="mr-2 text-[#0f603f]" size={20} />
                 Facility Usage
               </h4>
               <ul className="space-y-2 text-sm">
@@ -229,7 +234,7 @@ export default function App() {
             </div>
             <div className="p-4 bg-white rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center">
-                <MapPin className="mr-2 text-blue-500" size={20} />
+                <MapPin className="mr-2 text-[#0f603f]" size={20} />
                 Transport Service
               </h4>
               <ul className="space-y-2 text-sm">
@@ -240,7 +245,7 @@ export default function App() {
             </div>
             <div className="p-4 bg-white rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center">
-                <Calendar className="mr-2 text-blue-500" size={20} />
+                <Calendar className="mr-2 text-[#0f603f]" size={20} />
                 Events
               </h4>
               <ul className="space-y-2 text-sm">
@@ -260,7 +265,7 @@ export default function App() {
           
           {/* Phase 1 */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">Phase 1 - MVP (3 months)</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#0f603f]">Phase 1 - MVP (3 months)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="p-4 bg-white rounded-lg">
                 <h4 className="font-semibold mb-2">Competition & Events Features</h4>
@@ -291,7 +296,7 @@ export default function App() {
 
           {/* Phase 2 */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">Phase 2 - Enhanced Features (3 months)</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#0f603f]">Phase 2 - Enhanced Features (3 months)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="p-4 bg-white rounded-lg">
                 <h4 className="font-semibold mb-2">Enhanced Events Features</h4>
@@ -322,7 +327,7 @@ export default function App() {
 
           {/* Phase 3 */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">Phase 3 - Professional Features (3 months)</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#0f603f]">Phase 3 - Professional Features (3 months)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="p-4 bg-white rounded-lg">
                 <h4 className="font-semibold mb-2">Advanced Events Features</h4>
@@ -353,7 +358,7 @@ export default function App() {
 
           {/* Phase 4 */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">Phase 4 - Platform Maturity (4-6 months)</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#0f603f]">Phase 4 - Platform Maturity (4-6 months)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 bg-white rounded-lg">
                 <h4 className="font-semibold mb-2">Advanced Integration</h4>
@@ -375,7 +380,7 @@ export default function App() {
           </div>
 
           {/* Key Benefits */}
-          <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="text-[#0f603f] p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-2">Key Benefits of Cross-Platform Approach</h3>
             <ul className="space-y-2 text-sm">
               <li>• Single codebase for core business logic</li>
