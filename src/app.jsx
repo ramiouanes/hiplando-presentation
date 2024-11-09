@@ -1,6 +1,73 @@
-import React from 'react';
-import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar } from 'lucide-react';
-import { PresentationSection, Pillar, ProcessStep, PricingTier } from '@components';
+import React, { useState } from 'react';
+import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar, ChevronDown, ChevronRight, CheckCircle } from 'lucide-react';
+
+// Internal components defined in the same file
+const PresentationSection = ({ title, icon: Icon, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="mb-6">
+      <button 
+        onClick={() => setIsOpen(!isOpen)} 
+        className="w-full flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all"
+      >
+        <Icon className="text-blue-500 mr-3" size={24} />
+        <h2 className="text-xl font-semibold flex-grow text-left">{title}</h2>
+        {isOpen ? <ChevronDown className="text-gray-400" /> : <ChevronRight className="text-gray-400" />}
+      </button>
+      {isOpen && (
+        <div className="mt-2 p-4 bg-white rounded-lg shadow-sm">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const Pillar = ({ title, icon: Icon, items }) => (
+  <div className="flex-1 p-4 bg-white rounded-lg shadow-sm m-2">
+    <div className="flex items-center mb-4">
+      <Icon className="text-blue-500 mr-2" size={24} />
+      <h3 className="text-lg font-semibold">{title}</h3>
+    </div>
+    <ul className="space-y-2">
+      {items.map((item, index) => (
+        <li key={index} className="flex items-center">
+          <CheckCircle className="text-green-500 mr-2" size={16} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+const ProcessStep = ({ number, title, description, icon: Icon }) => (
+  <div className="flex items-start mb-4">
+    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-bold mr-3">
+      {number}
+    </div>
+    <div className="flex-grow">
+      <h4 className="font-semibold flex items-center">
+        <Icon className="text-blue-500 mr-2" size={16} />
+        {title}
+      </h4>
+      <p className="text-gray-600 mt-1">{description}</p>
+    </div>
+  </div>
+);
+
+const PricingTier = ({ title, features, highlighted = false }) => (
+  <div className={`flex-1 p-6 rounded-lg m-2 ${highlighted ? 'bg-blue-50 border-2 border-blue-200' : 'bg-white'}`}>
+    <h3 className="text-xl font-semibold mb-4">{title}</h3>
+    <ul className="space-y-3">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-start">
+          <CheckCircle className="text-green-500 mr-2 mt-1" size={16} />
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 
 export default function App() {
