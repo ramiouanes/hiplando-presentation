@@ -25,20 +25,31 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Debug file structure
+      - name: Debug directory structure before install
         run: |
-          echo "Current directory structure:"
-          ls -R
-          echo "\nContents of src/components/Pillar.jsx:"
-          cat src/components/Pillar.jsx || echo "File not found"
-          echo "\nContents of src/components/index.js:"
-          cat src/components/index.js || echo "File not found"
+          echo "Current working directory:"
+          pwd
+          echo "\nDirectory contents:"
+          ls -la
+          echo "\nRepository root contents:"
+          ls -la $GITHUB_WORKSPACE
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g vite
+
+      - name: Debug directory structure after install
+        run: |
+          echo "src directory contents:"
+          ls -la src/
+          echo "\nComponents directory contents:"
+          ls -la src/components/
 
       - name: Build
-        run: npm run build
+        run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          vite build
         env:
           CI: false
 
