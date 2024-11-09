@@ -28,12 +28,10 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          ls -la
           
       - name: Build
         run: |
-          npm run build
-          ls -la dist
+          npx vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
