@@ -7,10 +7,15 @@ const Pillar = React.lazy(() => import('./components/Pillar'));
 const ProcessStep = React.lazy(() => import('./components/ProcessStep'));
 const PricingTier = React.lazy(() => import('./components/PricingTier'));
 
+import React from 'react';
+import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar, Search, Database } from 'lucide-react';
+import PresentationSection from './components/PresentationSection.jsx';
+import Pillar from './components/Pillar.jsx';
+import ProcessStep from './components/ProcessStep.jsx';
+import PricingTier from './components/PricingTier.jsx';
+
 export default function App() {
   return (
-    <React.Suspense fallback={<div>Loading...</div>}>
-      {
     <div className="max-w-4xl mx-auto p-6 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-12">
@@ -194,7 +199,4 @@ export default function App() {
     </div>
   );
 }
-}
-    </React.Suspense>
-  );
-}
+
