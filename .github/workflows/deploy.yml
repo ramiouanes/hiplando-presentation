@@ -28,21 +28,17 @@ jobs:
       - name: Debug file structure
         run: |
           echo "Current directory structure:"
-          tree
-          echo "\nContents of src directory:"
-          ls -la src/
-          echo "\nContents of src/components directory:"
-          ls -la src/components/
-          
+          ls -R
+          echo "\nContents of src/components/Pillar.jsx:"
+          cat src/components/Pillar.jsx || echo "File not found"
+          echo "\nContents of src/components/index.js:"
+          cat src/components/index.js || echo "File not found"
+
       - name: Install dependencies
-        run: |
-          npm install
-          npm install -g vite
+        run: npm install
 
       - name: Build
-        run: |
-          export NODE_OPTIONS="--max_old_space_size=4096"
-          vite build
+        run: npm run build
         env:
           CI: false
 

@@ -6,17 +6,8 @@ export default defineConfig({
   plugins: [react()],
   base: '/hiplando-presentation/',
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '@': path.resolve(__dirname, './src')
-    }
-  },
-  build: {
-    rollupOptions: {
-      external: [],
-      output: {
-        manualChunks: undefined
-      }
+      '@components': path.resolve(__dirname, './src/components')
     }
   }
 })

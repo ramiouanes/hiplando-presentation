@@ -1,6 +1,6 @@
 import React from 'react';
 import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar } from 'lucide-react';
-import { PresentationSection, Pillar, ProcessStep, PricingTier } from './components';
+import { PresentationSection, Pillar, ProcessStep, PricingTier } from '@components';
 
 
 export default function App() {
