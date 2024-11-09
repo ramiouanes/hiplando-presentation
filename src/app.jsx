@@ -1,9 +1,10 @@
 import React from 'react';
 import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar } from 'lucide-react';
-import PresentationSection from '/src/components/PresentationSection.jsx';
-import Pillar from '/src/components/Pillar.jsx';
-import ProcessStep from '/src/components/ProcessStep.jsx';
-import PricingTier from '/src/components/PricingTier.jsx';
+// Use relative paths
+import PresentationSection from './components/PresentationSection';
+import Pillar from './components/Pillar';
+import ProcessStep from './components/ProcessStep';
+import PricingTier from './components/PricingTier';
 
 export default function App() {
   return (
