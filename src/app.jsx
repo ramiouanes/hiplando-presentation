@@ -157,9 +157,8 @@ export default function App() {
               <PricingTier
                 title="Basic Package"
                 features={[
-                  "Deal management system",
-                  "Document templates",
-                  "Community posting",
+                  "Community deal posting",
+                  "Basic documentation templates",
                   "Base commission rate"
                 ]}
               />
@@ -205,8 +204,10 @@ export default function App() {
                   "Complete horse management",
                   "Health tracking",
                   "Performance analytics",
-                  "Document management",
-                  "Professional network access"
+                  "Deal management system",
+                  "Advanced documentation tools",
+                  "Professional network access",
+                  "Deal progress tracking"
                 ]}
               />
             </div>
