@@ -25,26 +25,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Debug directory structure before install
+      - name: Debug file structure
         run: |
-          echo "Current working directory:"
-          pwd
-          echo "\nDirectory contents:"
-          ls -la
-          echo "\nRepository root contents:"
-          ls -la $GITHUB_WORKSPACE
-
+          echo "Current directory structure:"
+          tree
+          echo "\nContents of src directory:"
+          ls -la src/
+          echo "\nContents of src/components directory:"
+          ls -la src/components/
+          
       - name: Install dependencies
         run: |
           npm install
           npm install -g vite
-
-      - name: Debug directory structure after install
-        run: |
-          echo "src directory contents:"
-          ls -la src/
-          echo "\nComponents directory contents:"
-          ls -la src/components/
 
       - name: Build
         run: |
