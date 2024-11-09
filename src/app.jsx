@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar, ChevronDown, ChevronRight, CheckCircle } from 'lucide-react';
+import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, Calendar, ChevronDown, ChevronRight, CheckCircle, Timer, GitBranch } from 'lucide-react';
 
 // Internal components defined in the same file
 const PresentationSection = ({ title, icon: Icon, children }) => {
@@ -254,7 +254,7 @@ export default function App() {
       </PresentationSection>
 
       {/* Implementation Plan */}
-      <PresentationSection title="Implementation Plan" icon={Activity}>
+      <PresentationSection title="Implementation Plan" icon={GitBranch}>
         <div className="space-y-8">
           <p className="text-gray-600 mb-4">Cross-platform development strategy using React & React Native Expo</p>
           
