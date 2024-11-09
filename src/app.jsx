@@ -3,7 +3,7 @@ import { Building, Laptop, Users, Shield, Activity, Clock, MapPin, DollarSign, C
 
 // Internal components defined in the same file
 const PresentationSection = ({ title, icon: Icon, children }) => {
-  const [isOpen, setIsOpen] = useState(true); // Changed to true to have sections open by default
+  const [isOpen, setIsOpen] = useState(false); // Changed to true to have sections open by default
   return (
     <div className="mb-6">
       <button 
